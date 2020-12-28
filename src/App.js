@@ -1,76 +1,108 @@
+import React, { Component } from "react";
 import "./App.css";
-import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import styled from "styled-components";
+import Home from "./components/Home";
+import Philosophy from "./components/Philosophy";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
-// const FooterMain = styled.ul`
-//   display: flex;
-//   justify-content: space-between;
-//   list-style-type: none;
-//   margin-bottom: 10px;
-//   padding: 20px;
-//   background-color: #white;
-//   color: white;
-// `;
+const H1 = styled.h1`
+  text-align: center;
+`;
 
-function App() {
-  return (
-    <Router>
+export default class App extends Component {
+  state = {
+    showAbout: false,
+    showBanner: true,
+  };
+
+  showBanner = () => {
+    this.setState({
+      showAbout: false,
+      showBanner: true,
+    });
+  };
+
+  showAbout = () => {
+    this.setState({
+      showAbout: true,
+      showBanner: false,
+    });
+  };
+
+  render() {
+    return (
       <div>
-        <Navbar />
-        {/* <nav>
-          <FooterMain>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/philosophy">Philosophy</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </FooterMain>
-        </nav> */}
-        <Banner />
-        <Footer />
-        {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/philosophy">
-            <Philosophy />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Router>
+          {" "}
+          <div>
+            <Navbar showAbout={this.showAbout} showBanner={this.showBanner} />
+            <H1>Spanish Language Classes</H1>
+            {this.state.showBanner && <Banner />}
+            {/* A <Switch> looks through its children <Route>s and
+//           renders the first one that matches the current URL. */}{" "}
+            <Switch>
+              {}{" "}
+              <Route path="/about">{this.state.showAbout && <About />}</Route>{" "}
+              <Route path="/contact">
+                <Contact />{" "}
+              </Route>{" "}
+              <Route path="/philosophy">
+                <Philosophy />{" "}
+              </Route>{" "}
+              <Route path="/">
+                <Home />{" "}
+              </Route>{" "}
+            </Switch>{" "}
+          </div>
+          <Footer />{" "}
+        </Router>
       </div>
-    </Router>
-  );
-}
-function Home() {
-  return <h2>Home</h2>;
+    );
+
+    // function Contact() {
+    //   return <h2>Contact</h2>;
+    // }
+  }
 }
 
-function About() {
-  return <h2>About</h2>;
-}
+// function App() {
+//   return (
+//     <Router>
+//       <div>
+//         <Navbar />
+//         <H1>Spanish Language Classes</H1>
+//         <Banner />
 
-function Contact() {
-  return <h2>Contact</h2>;
-}
-function Philosophy() {
-  return <h2>Philosophy</h2>;
-}
+//         {/* A <Switch> looks through its children <Route>s and
+//           renders the first one that matches the current URL. */}
+//         <Switch>
+//           {}
+//           <Route path="/about">
+//             <About />
+//           </Route>
+//           <Route path="/contact">
+//             <Contact />
+//           </Route>
+//           <Route path="/philosophy">
+//             <Philosophy />
+//           </Route>
+//           <Route path="/">
+//             <Home />
+//           </Route>
+//         </Switch>
+//       </div>
+//       <Footer />
+//     </Router>
+//   );
+// }
 
-export default App;
+// function Contact() {
+//   return <h2>Contact</h2>;
+// }
+
+// export default App;

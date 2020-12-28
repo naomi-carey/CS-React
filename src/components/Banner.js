@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const BannerImg = styled.div`
   display: flex;
-  height: 50vh;
+  height: 60vh;
   background: url(${hola}) center center;
   background-size: cover;
   background-repeat: no-repeat;

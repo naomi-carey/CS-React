@@ -1,12 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital@0;1&family=Oswald:wght@400;600&display=swap");
+
 * {
-  margin: 0;
+  margin: 2px;
   border: 0;
+  text-decoration: none;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
 }
 
 .FooterMain a {

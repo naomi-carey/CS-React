@@ -39,7 +39,7 @@ export default function Footer() {
               <li>Boulder, Colorado USA</li>
               <li>
                 {" "}
-                <HiOutlineMail />
+                <HiOutlineMail href={"mailto:carla_svier24@gmail.com"} /> Email
               </li>
             </ListUnstyled>
           </div>
