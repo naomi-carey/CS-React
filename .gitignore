@@ -6,6 +6,9 @@
 .pnp.js
 .eslintcache
 
+# gmail pass
+.env
+
 # testing
 /coverage
 

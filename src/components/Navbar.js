@@ -49,7 +49,7 @@ const Navbar = (props) => (
         </StyledLink>
       </li>
       <li>
-        <StyledLink to="/contact" onClick={props.showBanner}>
+        <StyledLink to="/contact" onClick={props.showContact}>
           Contact
         </StyledLink>
       </li>

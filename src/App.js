@@ -18,6 +18,7 @@ export default class App extends Component {
   state = {
     showAbout: false,
     showBanner: true,
+    showContact: false,
   };
 
   showBanner = () => {
@@ -34,20 +35,34 @@ export default class App extends Component {
     });
   };
 
+  showContact = () => {
+    this.setState({
+      showAbout: false,
+      showBanner: false,
+      showContact: true,
+    });
+  };
+
   render() {
     return (
       <div>
         <Router>
           {" "}
           <div>
-            <Navbar showAbout={this.showAbout} showBanner={this.showBanner} />
+            <Navbar
+              showAbout={this.showAbout}
+              showBanner={this.showBanner}
+              showContact={this.showContact}
+            />
             <H1>Spanish Language Classes</H1>
             {this.state.showBanner && <Banner />}
             {/* A <Switch> looks through its children <Route>s and
 //           renders the first one that matches the current URL. */}{" "}
             <Switch>
               {}{" "}
-              <Route path="/about">{this.state.showAbout && <About />}</Route>{" "}
+              <Route path="/about">
+                <About />
+              </Route>{" "}
               <Route path="/contact">
                 <Contact />{" "}
               </Route>{" "}
@@ -69,40 +84,3 @@ export default class App extends Component {
     // }
   }
 }
-
-// function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <Navbar />
-//         <H1>Spanish Language Classes</H1>
-//         <Banner />
-
-//         {/* A <Switch> looks through its children <Route>s and
-//           renders the first one that matches the current URL. */}
-//         <Switch>
-//           {}
-//           <Route path="/about">
-//             <About />
-//           </Route>
-//           <Route path="/contact">
-//             <Contact />
-//           </Route>
-//           <Route path="/philosophy">
-//             <Philosophy />
-//           </Route>
-//           <Route path="/">
-//             <Home />
-//           </Route>
-//         </Switch>
-//       </div>
-//       <Footer />
-//     </Router>
-//   );
-// }
-
-// function Contact() {
-//   return <h2>Contact</h2>;
-// }
-
-// export default App;
