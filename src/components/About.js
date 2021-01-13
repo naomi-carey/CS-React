@@ -23,7 +23,6 @@ export default function About() {
   return (
     <div>
       <AboutImg />
-
       <AboutParagraph>
         As a teacher for the last 18 years I have had the priveledge to teach in
         many different environments and social settings. I began teaching in
@@ -34,14 +33,20 @@ export default function About() {
         education and believe it is a fundamental right for everyone. I have
         worked with students from very different backgrounds and countries and
         this has allowed me to discover the richness and magnificence of each
-        individual. <br /> My commitment to my students is to provide them with
-        the right amount of support and encouragement in order for them to
-        develop the necessary skills and confidence to take their learning to
-        the next level. I believe that the most important part of teaching is to
-        believe in your students so they can believe in themselves. I want to
-        facilitate the learning process so that each person learns based on
-        their interests/abilities and at the same time help them develop skills
-        in other needed areas . <br />
+        individual.{" "}
+      </AboutParagraph>
+      <br />{" "}
+      <AboutParagraph>
+        My commitment to my students is to provide them with the right amount of
+        support and encouragement in order for them to develop the necessary
+        skills and confidence to take their learning to the next level. I
+        believe that the most important part of teaching is to believe in your
+        students so they can believe in themselves. I want to facilitate the
+        learning process so that each person learns based on their
+        interests/abilities and at the same time help them develop skills in
+        other needed areas . <br />
+      </AboutParagraph>
+      <AboutParagraph>
         To me education is a dialogue where we listen to one another to find the
         best that is within. I am extremely passionate about bilingualism
         because I believe that it allows people to get to know themselves and

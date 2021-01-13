@@ -9,7 +9,7 @@ const BannerImg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 `;
 export default function Banner() {
   return (
